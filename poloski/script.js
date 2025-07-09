@@ -9,9 +9,9 @@ window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
 // Ромб параметры
-const DIAMOND_WIDTH = 20;
-const DIAMOND_HEIGHT = 40;
-const DIAMOND_GAP = 10;
+const DIAMOND_WIDTH = 8;
+const DIAMOND_HEIGHT = 8;
+const DIAMOND_GAP = 0;
 
 // Движение поля
 let offsetX = 0;
