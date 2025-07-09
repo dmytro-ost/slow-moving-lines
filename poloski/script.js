@@ -14,10 +14,10 @@ const lines = [];
 for (let i = 0; i < NUM_LINES; i++) {
   lines.push({
     y: Math.random() * canvas.height,
-    speed: 0.1 + Math.random() * 0.2,
+    speed: (0.1 + Math.random() * 0.2) * 20, // Increased speed x4
     amplitude: 40 + Math.random() * 80,
     phase: Math.random() * Math.PI * 2,
-    color: `hsl(${Math.floor(Math.random()*360)}, 80%, 60%)`
+    color: '#fff' // Set color to white
   });
 }
 
