@@ -14,15 +14,17 @@ const lines = [];
 for (let i = 0; i < NUM_LINES; i++) {
   lines.push({
     y: Math.random() * canvas.height,
-    speed: (0.1 + Math.random() * 0.2) * 20, // Increased speed x4
+    speed: (0.1 + Math.random() * 0.2) * 20, // Скорость оставляем как есть
     amplitude: 40 + Math.random() * 80,
     phase: Math.random() * Math.PI * 2,
-    color: '#fff' // Set color to white
+    color: '#000', // Черный цвет
+    width: 15 + Math.random() * 5 // Ширина от 15 до 20 пикселей
   });
 }
 
 function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#fff'; // Белый фон
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
   const time = Date.now() * 0.0002;
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -33,7 +35,7 @@ function draw() {
       else ctx.lineTo(x, y);
     }
     ctx.strokeStyle = line.color;
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = line.width; // Используем индивидуальную ширину
     ctx.globalAlpha = 0.7;
     ctx.stroke();
     ctx.globalAlpha = 1.0;
